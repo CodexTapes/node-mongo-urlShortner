@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node URL Shortener</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Hero Title -->
+    <section class="hero has-background-link-light is-large">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h2 class="title is-2 is-spaced has-text-grey-light site-title">
+            URL Shortener
+          </h2>
+
+          <!-- Text Input Box for Link -->
+          <div class="field mt-3">
+            <div class="control">
+              <input
+                class="input is-rounded is-medium input-shadow url-input"
+                type="text"
+                placeholder="Paste in a link to shorten it"
+              />
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="hero-item mt-4">
+            <button
+              class="button has-background-link is-medium is-rounded box-shadow"
+              type="submit"
+            >
+              <span class="has-text-white-ter">Shorten</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>URL Shortner</strong> by
+          <a href="https://github.com/CodexTapes" class="has-text-info"
+            >Amir Saeed</a
+          >. The source code is licensed
+          <a
+            href="http://opensource.org/licenses/mit-license.php"
+            class="has-text-info"
+            >MIT</a
+          >.
+          <a
+            href="https://github.com/CodexTapes/node-url-shortener"
+            class="has-text-info"
+            >Github Repo</a
+          >.
+        </p>
+
+        <span class="icon">
+          <a
+            class="icon has-text-grey-dark"
+            href="https://github.com/CodexTapes/node-url-shortener"
+          >
+            <i class="fa fa-github is-size-3 mt-3"></i>
+          </a>
+        </span>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

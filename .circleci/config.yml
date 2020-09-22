@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: circleci/node:alpine
+      - image: mongo:4.0.20-xenial
+    steps:
+        - checkout
+        - run:
+            name: update-npm
+            command: 'sudo npm install -g npm@6'

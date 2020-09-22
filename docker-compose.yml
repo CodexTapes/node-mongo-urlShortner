@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+    app:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: node:alpine
+      container_name: node_app
+      restart: unless-stopped
+      env_file: .env
+      environment:
+      - MONGO_USERNAME=$MONGO_USERNAME
+      - MONGO_PASSWORD=$MONGO_PASSWORD
+      - MONGO_HOSTNAME=db
+      - MONGO_PORT=$MONGO_PORT
+      - MONGO_DB=$MONGO_DB
+      ports:
+          - "80:8080"
+      volumes:
+          - .:/app/data
+      networks: 
+          - url_shortner_net
+    
+    mongodb:
+     image: mongo:4.0.20-xenial
+     container_name: mongodb
+     restart: unless-stoppped
+     env_file: .env
+     environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+     volumes:
+      - mongodb_data:/data/db
+     networks:
+       - url_shortner_net 
+
+    networks: 
+      url_shortner_net:
+        driver: bridge
+
+    volumes:
+      mongodb_data:  
